@@ -1,0 +1,73 @@
+@use '_colors.scss' as c;
+@use '_values.scss' as v;
+
+
+body{
+  background-color: #000;
+  font-family: "Poppins", sans-serif;
+  color: c.$text-base;
+}
+
+header{
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  .container{
+    max-width: 1024px;
+    margin: auto;
+
+    a{
+      img{
+        width: 200px;
+      }
+    }
+  }
+}
+
+.App {
+  width: calc(100vw - 20px * 2);
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+  padding-top: 100px;
+  position: relative;
+
+  &::before {    
+    content: "";
+    background-image: url('../images/background-xl.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.50;
+    z-index: -1;
+}
+
+  .container{
+    max-width: 1024px;
+    margin: auto;
+    background-color: #FFF;
+    height: 80vh;
+    border-radius: v.$border-radius;
+    padding: 20px;
+
+    .page-title{
+
+      border-bottom: 2px solid #F0F0F0;
+      padding-bottom: 20px;
+
+      h2{
+        margin: 0;
+        line-height: 30px;
+
+      }
+    }
+  }
+}
+

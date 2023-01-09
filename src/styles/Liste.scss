@@ -1,0 +1,40 @@
+@use '_colors.scss' as c;
+@use '_values.scss' as v;
+
+.content{
+    ul{
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        li{
+            background-color: c.$bg-fade;
+            border-radius: calc(v.$border-radius - 6px);
+            padding: 20px;
+
+            p{
+                margin: 0;
+                color: c.$text-fade;
+                font-size: 14px;
+            }
+            h4{
+                margin: 0;
+                font-size: 16px;
+            }
+
+            .observation{
+                background-color: #FFF;
+                padding: 10px;
+                border-radius: v.$border-radius - 12px;
+                margin-top: 10px;
+                
+                p{
+                    font-style: italic;
+                    color: c.$text-fade;
+                }
+            }
+        }
+    }
+}

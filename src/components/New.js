@@ -16,7 +16,7 @@ const Liste = () => {
   }, [])
   
 
-  const newAvis = (event) => {
+  const newAvis = () => {
 
     if (document.querySelector("#name").value !== "" && document.querySelector("#date").value !== ""){
       data.push({
@@ -26,7 +26,6 @@ const Liste = () => {
         observation: document.querySelector("#observation").value,
       })
       // event.preventDefault()
-      console.log(data)
       navigate('/liste')
       
     }

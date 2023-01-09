@@ -106,3 +106,19 @@ header{
   }
 }
 
+//TABLETTE
+@media screen and (min-width: v.$sm) {
+  .App{
+    .container{
+      .content{
+        flex-direction: row;
+
+        a{
+          flex-basis: 50%;
+          flex-direction: column;
+        }
+      }
+    }
+
+  }
+}

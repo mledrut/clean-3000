@@ -50,3 +50,32 @@
         }
     }
 }
+
+//TABLETTE
+@media screen and (min-width: v.$sm) {
+    .App{
+      .container{
+        .content{            
+            form{
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 20px;
+
+                .form-box{
+                    width: 100%;
+                }
+
+                .form-box:nth-child(-n + 2){
+                   width: calc(50% - 10px);
+                }
+
+                button{
+                    width: 50%;
+                }
+            }
+        }
+      }
+    }
+  }

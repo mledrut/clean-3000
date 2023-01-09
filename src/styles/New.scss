@@ -1,0 +1,52 @@
+@use '_colors.scss' as c;
+@use '_values.scss' as v;
+
+.content{
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .form-box{
+            display: flex;
+            flex-direction: column;
+            label{
+                font-size: 14px;
+            }
+            input[type=text], input[type=date], textarea{
+                border: 2px solid c.$text-base;
+                height: 47px;
+                border-radius: 10px;
+                padding: 0 20px;
+                font-size: 16px;
+                font-family: inherit;
+
+                &:focus-visible, &:focus, &:focus-within, &:target{
+                    outline: none;
+                    border: 2px solid c.$text-variant !important;
+                }
+            }
+            textarea{
+                padding: 20px;
+                resize: vertical;
+            }
+
+            
+        }
+        input[type=submit]{
+            background-color: c.$text-variant;
+            height: 47px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 2px solid c.$text-variant;
+            color: #FFF;
+            font-weight: bold;
+            font-size: 16px;
+
+            &:hover{
+                cursor: pointer;
+                background-color: #FFF;
+                color: c.$text-variant;
+            }
+        }
+    }
+}

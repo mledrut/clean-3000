@@ -9,7 +9,7 @@ body{
 }
 
 header{
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100px;
   display: flex;
@@ -40,7 +40,7 @@ header{
     content: "";
     background-image: url('../images/background-xl.jpg');
     background-size: cover;
-    position: absolute;
+    position: fixed;
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -53,7 +53,7 @@ header{
     max-width: 1024px;
     margin: auto;
     background-color: #FFF;
-    height: 80vh;
+    height: auto;
     border-radius: v.$border-radius;
     padding: 20px;
 
@@ -61,11 +61,46 @@ header{
 
       border-bottom: 2px solid #F0F0F0;
       padding-bottom: 20px;
+      margin-bottom: 20px;
 
       h2{
         margin: 0;
         line-height: 30px;
 
+      }
+    }
+
+    .content{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      a{
+        border: 2px solid c.$text-base;
+        border-radius: calc(v.$border-radius - 6px);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 12px;
+        color: inherit;
+
+        &:link{
+          text-decoration: none;
+        }
+
+        &:first-child{
+          color: c.$text-variant;
+          border: 2px solid c.$text-variant;
+        }
+
+        svg{
+          width: 80px;
+          height: 80px;
+        }
+        p{
+          margin: 0;
+          font-size: 20px;
+          font-weight: bold;
+        }
       }
     }
   }

@@ -12,6 +12,7 @@
             background-color: c.$bg-fade;
             border-radius: calc(v.$border-radius - 6px);
             padding: 20px;
+            position: relative;
 
             p{
                 margin: 0;
@@ -32,6 +33,26 @@
                 p{
                     font-style: italic;
                     color: c.$text-fade;
+                }
+                .no-observation{
+                   opacity: 0.3;
+                }
+            }
+
+            button{
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                border: none;
+                padding: 0;
+                svg{
+                    width: 20px;
+                    height: 20px;
+                    color: c.$but-red;
+                }
+
+                &:hover{
+                    cursor: pointer;
                 }
             }
         }

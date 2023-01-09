@@ -1,9 +1,38 @@
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../styles/App.scss';
 import '../styles/New.scss';
+import data from './data.js'
+
 
 
 const Liste = () => {
+  
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const dayDate = new Date
+    document.querySelector("#date").value = dayDate.toISOString().split('T')[0]
+  }, [])
+  
+
+  const newAvis = (event) => {
+
+    if (document.querySelector("#name").value !== "" && document.querySelector("#date").value !== ""){
+      data.push({
+        id: Date.now(),
+        name: document.querySelector("#name").value,
+        date: document.querySelector("#date").value,
+        observation: document.querySelector("#observation").value,
+      })
+      // event.preventDefault()
+      console.log(data)
+      navigate('/liste')
+      
+    }
+
+  }
+
   return (
     <div className='App'>
        <div className="container">
@@ -22,9 +51,10 @@ const Liste = () => {
             </div>
             <div className="form-box">
               <label htmlFor="observation">Observation</label>
-              <textarea name="observation" id="observation" maxlength="240" placeholder='(Optionnel)'></textarea>
+              <textarea name="observation" id="observation" maxLength="240" placeholder='(Optionnel)'></textarea>
             </div>
-            <input type="submit" value="Envoyer"></input>
+            <button onClick={(e) => newAvis(e)}>Envoyer</button>
+            {/* <input onClick={(e) => newAvis(e)} type="submit" value="Envoyer"></input> */}
           </form>
         </div>
       </div> 

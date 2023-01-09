@@ -11,7 +11,7 @@ const Liste = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const dayDate = new Date
+    const dayDate = new Date()
     document.querySelector("#date").value = dayDate.toISOString().split('T')[0]
   }, [])
   
@@ -25,7 +25,6 @@ const Liste = () => {
         date: document.querySelector("#date").value,
         observation: document.querySelector("#observation").value,
       })
-      // event.preventDefault()
       navigate('/liste')
       
     }
@@ -53,7 +52,6 @@ const Liste = () => {
               <textarea name="observation" id="observation" maxLength="240" placeholder='(Optionnel)'></textarea>
             </div>
             <button onClick={(e) => newAvis(e)}>Envoyer</button>
-            {/* <input onClick={(e) => newAvis(e)} type="submit" value="Envoyer"></input> */}
           </form>
         </div>
       </div> 

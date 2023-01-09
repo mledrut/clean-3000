@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../styles/App.scss';
 import '../styles/Liste.scss';
 import DisplayDate from './tools.js'
-import { AiFillDelete } from "react-icons/ai";
+// import { AiFillDelete } from "react-icons/ai";
 
 import data from './data.js'
 
@@ -24,6 +24,27 @@ const Liste = () => {
     setAvisList(copyAvisList)
     }
 
+    const renderList = () => {
+
+        return(
+        avisList
+        .sort((a, b) => a.id < b.id ? 1 : -1)
+        .map(item => {
+            return(
+                <li key={item.id}>
+                    <p>{DisplayDate(item.date)}</p>
+                    <h4>{item.name}</h4>
+                    <div className="observation">
+                        <p className={`${item.observation? null : "no-observation"}`}
+                        >{item.observation? item.observation : "Pas d'observation."}</p>
+                    </div>
+                    {/* <button onClick={() => delAvis(item.id)}><AiFillDelete /></button> */}
+                </li>
+            )
+        })
+        )
+    }
+
   return (
     <div className='App'>
        <div className="container">
@@ -32,23 +53,7 @@ const Liste = () => {
             </div>
             <div className="content">
                 <ul>
-                    {
-                        avisList
-                        .sort((a, b) => a.id < b.id ? 1 : -1)
-                        .map(item => {
-                            return(
-                                <li key={item.id}>
-                                    <p>{DisplayDate(item.date)}</p>
-                                    <h4>{item.name}</h4>
-                                    <div className="observation">
-                                        <p className={`${item.observation? null : "no-observation"}`}
-                                        >{item.observation? item.observation : "Pas d'observation."}</p>
-                                    </div>
-                                    <button onClick={() => delAvis(item.id)}><AiFillDelete /></button>
-                                </li>
-                            )
-                        })
-                    }
+                    {renderList()}
                 </ul>
             </div>
         </div> 
